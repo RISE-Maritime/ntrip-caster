@@ -1,0 +1,12 @@
+services:
+  caster:
+    build: .
+    ports:
+      - "2101:2101"
+    volumes:
+      - ./conf:/usr/local/ntripcaster/conf
+      - caster-logs:/usr/local/ntripcaster/logs
+    restart: unless-stopped
+
+volumes:
+  caster-logs:
